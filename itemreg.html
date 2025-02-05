@@ -1,0 +1,124 @@
+<html>
+	<head>
+	<title>ADMIN FORM</title>
+	<style>
+	.main {
+	width: 600px;
+	margin-top:0%;
+	margin-left:30%;
+	padding: 30px 0;
+  	font-size: 10px;
+	}
+	form {
+	background:transparent;
+	color:#778899;
+	border-radius: 3px;
+	margin-bottom: 20px 20px;
+	box-shadow: 1px 1px 1px 1px lightblue;
+	padding: 70px;
+	}
+	input[type="submit"]{
+	background-color:lightgreen;
+	box-shadow: 3px 3px 3px 3px green;
+	color: white;
+	padding: 10px 60px;
+	margin: 5px 30px;
+	font-size:16px;
+    border-radius:100px;
+	box-sizing:barder-box;
+	border:1px solid #2222;
+	baclground:#fsfsfs;
+	}
+	input[type=text] {
+	padding: 8px;
+	background-color:lightblue;
+	box-shadow: 3px 3px 3px 3px blue;
+	color: white;
+	font-size:14px;
+    border-radius:100px;
+	box-sizing:barder-box;
+	border:1px solid #2222;
+	baclground:#fsfsfs;
+	}
+	body{
+	background-image:url("lo.jpg");
+	background-repeat:no-repeat;
+	background-size:cover;
+	}
+	a{
+	color:red;
+	}
+	</style>
+	</head>
+	<body>
+		<div class="main">
+		<form  name="form" onsubmit="return validateForm()" method="post" action="search.jsp">
+			<center><font color="red" size=6px>**ADMIN FORM**</font></center><br><br>
+			<div>
+				<font size=4px color="black">IMAGE_FILE:</font><br>
+				<input type="text" name="img" class="form-control" id="item" placeholder="IMAGE FILE" size="50" autocomplete="off">
+			</div><br>
+			<div>
+				<font size=4px color="black">ITEM ID:</font><br>
+				<input type="text" name="itemid" class="form-control" id="item" placeholder="ITEM ID" size="50" autocomplete="off">
+			</div><br>
+			<div>
+				<font size=4px color="black">ITEM_NAME:</font><br>
+				<input type="text" name="itemname" class="item" placeholder="ITEM NAME" size="50" autocomplete="off">
+			</div><br><br>
+			<div>
+				<font size=4px color="black">PRICE:</font><br>
+				<input type="text" name="price" class="price" placeholder="PRICE" size="50" autocomplete="off">
+			</div><br><br>
+			<div>
+				<font size=4px color="black">QUANTITY:</font><br>
+				<input type="text" name="quan" class="quan" placeholder="QUANTITY" size="50" autocomplete="off">
+			</div><br><br>
+			<div class="submit">
+				<a href="update.html" style="font-size:20">UPDATE?</a>
+				<input type="submit" value="SUBMIT">
+			</div>
+		</form>
+		<div><center><h2>Customer Details?please <a href="AdRes.jsp"><b>details</b></a></h2><center></div>
+		<div><center><h2>Item Details?please <a href="AdItem.jsp"><b>details</b></a></h2><center></div>
+		</div>
+		<script>
+		function validateForm() {
+		let itemid = document.forms["form"]["itemid"].value;
+		let itemname = document.forms["form"]["itemname"].value;
+		let price = document.forms["form"]["price"].value;
+		let quantity = document.forms["form"]["quan"].value;
+		
+		if (itemname == "") {
+			alert("ITEM ID must be filled out");
+			return false;
+		}
+		if (itemid == "") {
+			alert("ITEM ID must be filled out");
+			return false;
+		}
+		if (price == "") {
+			alert("PASSWORD must be filled out");
+			return false;
+		}
+		else if(price.length<2 || price.length >10){
+			alert("PASSWORD length must be between 5 and 20");
+			return false;
+		}
+		if (quantity == "") {
+			alert("PASSWORD must be filled out");
+			return false;
+		}
+		else if(quantity.length<1 || quantity.length >10){
+			alert("QUANTITY length must be between 1 and 10");
+			return false;
+		}
+	}
+			
+		
+		
+			
+		
+		</script>
+	</body>
+</html>
